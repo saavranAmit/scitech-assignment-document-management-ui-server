@@ -1,0 +1,472 @@
+# # Online Python compiler (interpreter) to run Python online.
+# # Write Python 3 code in this online editor and run it.
+# # Online Python compiler (interpreter) to run Python online.
+# # Write Python 3 code in this online editor and run it.
+
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+# class List:
+#     def __init__(self):
+#         self.head = None
+    
+#     def atLast(self, data):
+#         node = Node(data)
+        
+#         if self.head == None:
+#             self.head = node
+#         else:
+#             temp = self.head
+#             while temp.next:
+#                 temp = temp.next
+#             temp.next = node
+            
+#     def createCircle(self):
+#         temp = self.head
+#         point = temp
+#         while temp.next:
+#             temp = temp.next
+#         temp.next = point
+    
+#     def isCircular(self):
+#         arr = []
+#         temp = self.head
+#         while temp.next:
+#             if temp in arr:
+#                 return True
+#             arr.append(temp)
+#             temp = temp.next
+#         return False
+        
+        
+#     def printList(self):
+#         temp = self.head
+#         while temp:
+#             print(f"{temp.data}", end = ">>>")
+#             temp = temp.next
+            
+# linkedList = List()
+# linkedList.atLast(1)
+# linkedList.atLast(2)
+# linkedList.atLast(3)
+# linkedList.atLast(4)
+# linkedList.atLast(5)
+
+# linkedList.printList()
+# linkedList.createCircle()
+# print(linkedList.isCircular())
+
+
+# def pattern(n):
+#     prev = 1
+#     prev2 = 1
+#     for i in range(2, n + 1):
+#         print(f"{prev2}=={prev}")
+#         curr = prev + prev2
+#         prev2 = prev
+#         prev = curr
+#     return prev
+# print(pattern(6))
+    
+    
+# def isPalindrome(x):
+#     if x < 0 :
+#         return False
+#     else:
+#         rev = 0
+#         while x > 0:
+#             print(x)
+#             mode = x % 10
+#             rev = rev*10 + mode
+#             x = x//10
+#         print(rev)
+#         if x == rev:
+#             return True
+#         else:
+#             return False
+            
+# print(isPalindrome(121))
+
+
+# def plusOne(arr):
+#     num = 0
+#     arr2 = []
+#     for i in range(len(arr)):
+#         num = num*10 + arr[i]
+#     add = num + 1
+#     string = str(add)
+#     for i in range(len(string)):
+#         arr2.append(int(string[i]))
+#     return arr2
+    
+# print(plusOne([9]))
+
+# def sqrt(n):
+#     num = 0
+#     for i in range(n):
+#         if i*i <= n:
+#             num = i
+#         else:
+#             break
+#     return num
+    
+# print(sqrt(8))
+
+
+
+
+# def MergeShort(nums1, m, nums2, n):
+#     nums1.extend(nums2)
+#     for i in range(len(nums1)):
+#         for j in range(len(nums1)-1):
+#             if nums1[j] > nums1[j+1]:
+#                 value = nums1[j+1]
+#                 nums1[j+1] = nums1[j]
+#                 nums1[j] = value
+                
+#     arr = []
+#     for i in range(len(nums1)):
+#         if nums1[i] != 0:
+#             arr.append(nums1[i])
+    
+#     return arr
+    
+# print(MergeShort([1,2,3,0,0,0], 3, [2,5,6], 3))
+
+# def removeEle(nums, val):
+#     arr = []
+#     for i in range(len(nums)):
+#         if nums[i] != val:
+#             arr.append(nums[i])
+#     return arr
+    
+# print(removeEle([0,1,2,2,3,0,4,2], 2))
+
+
+
+# def longestComm(strs):
+#     first = strs[0]
+#     prefix = first
+#     for i in range(1,len(strs)):
+#         string = ""
+#         for j in range(len(strs[i])):
+#             if first[j] == strs[i][j]:
+#                 string += first[j]
+               
+#         if len(string) < len(prefix):
+#             prefix = string
+#     return prefix
+    
+# print(longestComm(["dog","racecar","car"]))
+
+# def isoMorphic(str1, str2):
+    # obj = {}
+    # if len(str1) != len(str2):
+    #     return False
+    # for i in range(len(str1)):
+    #     if str1[i]  not in obj:
+    #         obj[str1[i]] = str2[i]
+    #     elif obj[str1[i]] != str2[i]:
+    #         return False
+    # return True
+    
+#     obj = {}
+#     obj2 = {}
+#     if len(str1) != len(str2):
+#         return False
+#     for i in range(len(str1)):
+#         if str1[i]  not in obj:
+#             obj[str1[i]] = str2[i]
+#         if str2[i]  not in obj2:
+#             obj2[str2[i]] = str1[i]
+#         if obj[str1[i]] != str2[i]:
+#             return False
+#         if obj2[str2[i]] != str1[i]:
+#             return False
+#     return True
+
+# print(isoMorphic("badc", "baba"))
+
+# def twoSum(nums, target):
+    # arr = []
+
+    # for i in range(len(nums) - 1):
+    #     for j in range(i+1, len(nums)):
+    #         if nums[i] + nums[j] == target:
+    #             print(arr)
+    #             arr.extend([i, j])
+    # return arr
+    
+    
+# print(twoSum([1,0,1,1], 1))
+
+# def containDubb(nums, k):
+#     obj = {}
+#     for i in range(len(nums)):
+#         if nums[i] not in obj:
+#             obj[nums[i]] = i
+#         elif -(obj[nums[i]] - i) <= k:
+#             return True
+#         else:
+#             obj[nums[i]] = i
+            
+
+#     return False
+# print(containDubb([1,0,1,1], 1))
+# print(containDubb([1,2,3,1], 3))
+
+
+# def validDrome(string):
+#     s = ""
+#     for i in string:
+#         if i.isalpha():
+#             s += i
+#     a = s.lower()
+    
+#     rev = ""
+#     for i in range(len(a)):
+#         rev = a[i] + rev
+#     if rev == a:
+#         return True
+#     return False
+    
+# print(validDrome("A man, a plan, a canal: Panama"))
+
+
+# def subSequence(string, sub):
+#     secStr = ""
+#     index = 0
+#     for i in range(len(sub)):
+#         print(sub[i])
+#         for j in range(index, len(string)):
+#             if sub[i] == string[j]:
+#                 secStr += string[j]
+#                 index = j + 1
+#                 break
+#     print(secStr)
+#     if secStr == sub:
+#         return True
+#     return False
+    
+# print(subSequence("ahbgdc", "abx"))
+
+
+# def minSub(arr, target):
+#     length = len(arr)
+#     for i in range(len(arr)):
+#         total = 0
+#         for j in range(i,len(arr)):
+#             total += arr[j]
+#             if total == target and length > (j - i + 1):
+                
+#                 print(f"{j - i + 1}")
+#                 length = j - i + 1
+#             elif total > target:
+#                 break
+
+#     return length
+# print(minSub([2,3,1,2,4,3], 7))
+
+
+def jumpGame(arr):
+    index = 0
+    for i in range(index,len(arr)):
+        for j in range(i, arr[i] + i):
+            index += 1
+            if index == len(arr) - 1:
+                return True
+            elif index > len(arr) - 1:
+                
+                return
+    return False
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+# def reverseWords(s):
+#     arr = s.split()
+#     arr2 = []
+#     for i in range(len(arr)):
+#         string = ""
+#         for j in arr[i]:
+#             if j.isalpha() == True:
+#                 string = string + j
+#         arr2.append(string)
+        
+#     for i in range(len(arr2) // 2):
+#         val = arr2[i]
+#         arr2[i] = arr2[-1 - i]
+#         arr2[-1 - i] = val
+#     str2 = " ".join(arr2)
+
+#     return str2
+
+# print(reverseWords("EPY2giL"))
+
+
+# def findIndex(string, sub):
+#     index = -1
+#     for i in range(len(string) - len(sub) + 1):
+        
+#         for j in range(len(sub)):
+#             if string[i + j] == sub[j]:
+#                 index = i
+#                 continue
+#             else:
+#                 index = -1
+#                 break
+#         if j + 1 == len(sub):
+#             return index
+#     return index
+        
+# print(findIndex("abc", "c"))
+
+
+# def merge(nums1, m, nums2, n):
+    
+#     for i in range(m, m + n):
+#         nums1[i] = nums2[i - n]
+        
+    
+    
+            
+ 
+#     for i in range(len(nums1)):
+#         for j in range(len(nums1)-1):
+#             if nums1[j] > nums1[j+1]:
+#                 value = nums1[j+1]
+#                 nums1[j+1] = nums1[j]
+#                 nums1[j] = value
+   
+        
+#     return nums1
+                
+# print(merge([0], 0, [1], 1))
+
+
+
+
+# def remove(nums, val):
+#     count = 0
+#     pointer = 0
+#     for i in range(len(nums)):
+#         if nums[i] != val:
+#             count += 1
+#             value = nums[i]
+#             nums[i] = nums[pointer]
+#             nums[pointer] = value
+#             pointer = pointer + 1
+#     return count
+    
+# print(remove([0,1,2,2,3,0,4,2], 2))
+
+
+# def removeDub(nums):
+    # pointer = 0
+    # pointer2 = 0
+    # arr = []
+    # count = 0
+    # for i in range(len(nums)):
+    #     if nums[i] not in arr:
+    #         count += 1
+    #         arr.append(nums[i])
+    #         val = nums[pointer]
+    #         nums[pointer] = nums[pointer2]
+    #         nums[pointer2] = val
+    #         pointer += 1
+    #         pointer2 += 1
+    #     else:
+    #         pointer2 += 1
+    # return count
+# print(removeDub([0,0,1,1,1,2,2,3,3,4]))
+
+
+
+            
+            
+  # # Online Python compiler (interpreter) to run Python online.
+# # Write Python 3 code in this online editor and run it.
+# def removeDub(nums):
+#     pointer = 0
+#     pointer2 = 0
+#     obj = {}
+#     count = 0
+#     for i in range(len(nums)):
+#         if nums[i] not in obj:
+#             count += 1
+#             obj[nums[i]] = 1
+#             val = nums[pointer]
+#             nums[pointer] = nums[pointer2]
+#             nums[pointer2] = val
+#             pointer += 1
+#             pointer2 += 1
+#             print(f'{obj}--{pointer}==={pointer}')
+#         elif obj[nums[i]] < 2:
+#             count += 1
+#             obj[nums[i]] += 1
+#             val = nums[pointer]
+#             nums[pointer] = nums[pointer2]
+#             nums[pointer2] = val
+#             pointer += 1
+#             pointer2 += 1
+#             print(f'{obj}--{pointer}==={pointer}')
+#         else:
+#             obj[nums[i]] += 1
+#             pointer2 += 1
+#             print(f'{obj}--{pointer}==={pointer}---')
+#     print(nums)
+#     return count
+    
+# print(removeDub([0,0,1,1,1,1,2,3,3]))                        
+            
+            
+            
+
+https://console.firebase.google.com/project/authentication-f6a80/authentication/users
+
+https://www.loom.com/share/f513570828334353b12296262295f188?sid=bc6b5e5d-03bd-4441-9bbc-c72c57ff3fd7
+
+            
